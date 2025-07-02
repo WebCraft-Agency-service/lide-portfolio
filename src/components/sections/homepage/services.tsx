@@ -32,7 +32,7 @@ export default function Services() {
                 viewport={{ once: true }}
               >
                 <div
-                  className="flex items-center gap-2 shadow-lg rounded-3xl"
+                  className="flex items-center gap-2 shadow-lg rounded-3xl hover:scale-110 transition-all duration-200"
                   aria-label={service.title}
                 >
                   <service.icon size={35} />

@@ -30,13 +30,13 @@ export default function Hero() {
           </span>
         </ShinyButton>
         <div className="flex flex-col gap-8">
-          <div>
+          <div className="space-y-4">
             <BlurText
               text="Create"
               delay={150}
               animateBy="words"
               direction="top"
-              className="text-6xl font-semibold text-gray-400 mb-8"
+              className="text-6xl font-semibold text-gray-400"
             />
             <BlurText
               text="A Better Story"
