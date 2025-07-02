@@ -2,9 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { RecentWork } from "./sections/homepage/trustedBy";
 import Image from "next/image";
 import Link from "next/link";
+import { RecentWork } from "@/lib/data";
 
 type ProjectCardProps = {
   idx: number;
@@ -15,6 +15,7 @@ export default function ProjectCard(props: ProjectCardProps) {
     <Link
       href={props.link}
       target="_blank"
+      rel="noopener noreferrer"
       className="group"
       title="Click to view the project"
     >

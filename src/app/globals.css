@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -66,26 +68,34 @@
     }
   }
   --animate-marquee: marquee var(--duration) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite
-;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {
-  from {
-    transform: translateX(0);}
-  to {
-    transform: translateX(calc(-100% - var(--gap)));}}
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);}
-  to {
-    transform: translateY(calc(-100% - var(--gap)));}}
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
   --animate-gradient: gradient 8s linear infinite;
   @keyframes gradient {
-  to {
-    background-position: var(--bg-size, 300%) 0;}}}
+    to {
+      background-position: var(--bg-size, 300%) 0;
+    }
+  }
+}
 
 :root {
   --radius: 0.625rem;
-  --background:oklch(0.9861 0.0017 325.59);
+  --background: oklch(0.9861 0.0017 325.59);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(0.9861 0.0017 325.59);
   --card-foreground: oklch(0.141 0.005 285.823);
@@ -166,4 +176,20 @@
   .section-container {
     @apply my-10 mx-auto px-2 md:w-2/3 sm:w-full;
   }
+}
+
+.variable-proximity {
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

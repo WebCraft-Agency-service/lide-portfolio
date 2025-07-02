@@ -1,64 +1,10 @@
 import React from "react";
 import { Marquee } from "@/components/magicui/marquee";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import ProjectCard from "@/components/projectCard";
 
-import Project1 from "@assets/project1.jpg";
-import Project2 from "@assets/project2.jpg";
-import Project3 from "@assets/project3.jpg";
-import Project4 from "@assets/project4.jpg";
-import { BlurFade } from "@/components/magicui/blur-fade";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-
-export interface RecentWork {
-  name: string;
-  image: StaticImport | string;
-  description: string;
-  link: string;
-}
-
-const designTools = [
-  { name: "Adobe Photoshop" },
-  { name: "Adobe Illustrator" },
-  { name: "Figma" },
-  { name: "Adobe XD" },
-  { name: "Sketch" },
-  { name: "Procreate" },
-  { name: "Canva" },
-  { name: "InDesign" },
-];
-
-export const recentWorks: Array<RecentWork> = [
-  {
-    name: "UI/UX Design for E-commerce website",
-    image: Project1,
-    description:
-      "This is a design for an e-commerce website, it is a simple and clean design, with a modern and trendy look.",
-    link: "",
-  },
-  {
-    name: "Web App Design for a Fitness program",
-    image: Project2,
-    description:
-      "This is a design for a fitness app, it is a simple and clean design, with a modern and trendy look.",
-    link: "",
-  },
-  {
-    name: "Web App Design for a Food Delivery",
-    image: Project3,
-    description:
-      "This is a design for a food delivery app, it is a simple and clean design, with a modern and trendy look.",
-    link: "",
-  },
-  {
-    name: "Web App Design for a Social Media",
-    image: Project4,
-    description:
-      "This is a design for a social media app, it is a simple and clean design, with a modern and trendy look.",
-    link: "",
-  },
-];
+import { designTools, recentWorks } from "@/lib/data";
 
 export default function TrustedBy() {
   return (
@@ -92,18 +38,16 @@ export default function TrustedBy() {
           className="grid lg:grid-cols-2 grid-cols-1 gap-6 my-5"
         >
           {recentWorks.map((work, idx) => (
-            <BlurFade key={idx}>
-              <ProjectCard idx={idx} {...work} />
-            </BlurFade>
+            <ProjectCard key={idx} idx={idx} {...work} />
           ))}
-          <div className="col-span-2 flex justify-center items-center">
-            <Button
-              variant="ghost"
-              className="w-fit rounded-full text-base px-4 py-2 hover:scale-105 transition-all duration-200"
-            >
-              View All Works <ArrowUpRight />
-            </Button>
-          </div>
+        </div>
+        <div className="col-span-2 flex justify-center items-center">
+          <Button
+            variant="ghost"
+            className="w-fit rounded-full text-base px-4 py-2 hover:scale-105 transition-all duration-200"
+          >
+            View All Works <ArrowUpRight />
+          </Button>
         </div>
       </section>
     </section>
