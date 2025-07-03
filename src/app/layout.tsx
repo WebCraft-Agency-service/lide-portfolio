@@ -2,11 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
-
-// const kantumruyPro = Kantumruy_Pro({
-//   variable: "--font-kantumruy-pro",
-//   subsets: ["latin", "khmer"],
-// });
+import Footer from "@/components/footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,6 +24,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "LideKauv" }],
   publisher: "LideKauv",
+  alternates: {
+    languages: {
+      en: "https://lidekauv.com",
+    },
+    canonical: "https://lidekauv.com",
+    types: {
+      website: "https://lidekauv.com",
+      portfolio: "https://lidekauv.com",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -37,9 +43,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased container my-5`}>
-        <Navbar />
-        {children}
+      <body className={`${inter.variable} antialiased`}>
+        <section className="container my-10">
+          <Navbar />
+          {children}
+        </section>
+        <Footer />
       </body>
     </html>
   );
