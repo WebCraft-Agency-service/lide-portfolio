@@ -22,7 +22,7 @@ export default function Services() {
         </TextAnimate>
         <div className="my-20">
           <p className="text-lg font-semibold">My personal Creative toolbox</p>
-          <div className="flex items-center gap-4 mt-2">
+          <div className="flex lg:flex-nowrap flex-wrap items-center gap-4 mt-2">
             {services.map((service, idx) => (
               <motion.div
                 key={idx}
