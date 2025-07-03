@@ -6,6 +6,11 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { services, services_list } from "@/lib/data";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function Services() {
   return (
@@ -31,12 +36,19 @@ export default function Services() {
                 transition={{ duration: (idx + 1) * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div
-                  className="flex items-center gap-2 shadow-lg rounded-3xl hover:scale-110 transition-all duration-200"
-                  aria-label={service.title}
-                >
-                  <service.icon size={35} />
-                </div>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div
+                      className="flex items-center gap-2 shadow-lg rounded-3xl hover:scale-110 transition-all duration-200"
+                      aria-label={service.title}
+                    >
+                      <service.icon size={35} />
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{service.title}</p>
+                  </TooltipContent>
+                </Tooltip>
               </motion.div>
             ))}
           </div>

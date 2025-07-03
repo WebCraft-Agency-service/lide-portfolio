@@ -39,7 +39,7 @@ export const designTools = [
   { name: "InDesign" },
 ];
 
-export const recentWorks: Array<RecentWork> = [
+export const Works: Array<RecentWork> = [
   {
     name: "UI/UX Design for E-commerce website",
     image: Project1,

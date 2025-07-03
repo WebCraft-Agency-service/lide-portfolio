@@ -4,7 +4,7 @@ import ProjectCard from "@/components/projectCard";
 
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import { designTools, recentWorks } from "@/lib/data";
+import { designTools, Works } from "@/lib/data";
 
 export default function TrustedBy() {
   return (
@@ -37,7 +37,7 @@ export default function TrustedBy() {
           aria-label="my-recent-works-list-4 items"
           className="grid lg:grid-cols-2 grid-cols-1 gap-6 my-5"
         >
-          {recentWorks.map((work, idx) => (
+          {Works.slice(0, 4).map((work, idx) => (
             <ProjectCard key={idx} idx={idx} {...work} />
           ))}
         </div>
